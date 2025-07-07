@@ -1,0 +1,57 @@
+/*
+YUI 3.18.1 (build f7e7bcb)
+Copyright 2014 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+
+/* sass variables */
+$white: #f7f7f7;
+$black: #282722;
+$grey: #cccccc;
+$peach: #ff9a9a;
+
+/* body */
+html {
+  background: $white;
+  color: $black;
+  padding: calc(20px + 5vh + 5vw);
+  /* system fonts will do just fine thanks! */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+/* typography */
+h1 {
+  font-size: calc(30px + 2vh + 2vw);
+  margin-bottom: calc(15px + 0.5vh + 0.5vw);
+}
+p {
+  font-size: calc(12px + 0.5vh + 0.5vw);
+  line-height: 1.5;
+}
+
+/* navigation */
+nav {
+  background: $black;
+  padding: calc(20px + 1vh + 1vw);
+  ul {
+    li {
+      display: inline-block;
+      margin-right: 1vw;
+      a {
+        font-size: calc(12px + 1vh + 1vw);
+        color: $white;
+        &:hover {
+          color: $peach;
+        }
+      }
+    }
+  }
+}
+
+/* content area */
+.content {
+  background: $grey;
+  padding: calc(20px + 1vh + 1vw);
+}

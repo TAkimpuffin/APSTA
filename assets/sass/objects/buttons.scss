@@ -1,0 +1,11 @@
+@use '../variables/' as *;
+
+.btn {
+    display: block;
+    padding: 1rem;
+    color: $white;
+    background: $primary;
+    border-radius: 3px;
+    // background: $beans;
+    text-transform: capitalize;
+}
