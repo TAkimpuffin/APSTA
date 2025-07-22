@@ -1,0 +1,44 @@
+@use '../variables/' as *;
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    &__logo {
+        width: 50%;
+
+        a {
+            width: 100%;
+            img {
+                width: 100%;
+                height: auto;
+                max-height: 100px;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+    }
+
+    &__wrapper {
+        margin-bottom: 2.5rem;
+    }
+
+    &__toggle {
+
+    }
+    
+    &__nav {
+        width: 100%;
+    }
+
+    @include lg {
+        &__logo {
+            width: 18%;
+        }
+
+        &__nav {
+            width: 78%;
+        }
+    }
+}

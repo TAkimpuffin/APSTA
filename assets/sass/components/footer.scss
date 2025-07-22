@@ -1,0 +1,13 @@
+.footer {
+    &__logo {
+        display: flex;
+        align-items: center;
+        img {
+            max-height: 40px;
+        }
+    }
+
+    &__legal {
+        text-align: center;
+    }
+}

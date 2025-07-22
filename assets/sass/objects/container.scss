@@ -4,9 +4,8 @@
 // -- container width vars
 
 $container-inner-maxwidth: 1340px;
-$container-inner-pad : 0 2.5rem;
+$container-inner-pad: 0 2.5rem;
 $container-inner-pad-mob: 0 1.25rem;
-
 
 // END OF VARS ===============================================================
 
@@ -19,17 +18,21 @@ $container-inner-pad-mob: 0 1.25rem;
     height: fit-content;
     justify-content: center;
 
-    // &--primary {
-    //     background: $primary;
-    // }
+    &--primary {
+        background: $primary;
+    }
 
-    // &--secondary {
-    //     background: $secondary;
-    // }
+    &--secondary {
+        background: $secondary;
+    }
 
-    // &--tertiary {
-    //     background: $tertiary;
-    // }
+    &--tertiary {
+        background: $tertiary;
+    }
+
+    &--black {
+        background: $black;
+    }
 
     &__inner {
         width: 100%;
@@ -41,14 +44,14 @@ $container-inner-pad-mob: 0 1.25rem;
 
         @include md {
             padding: $container-inner-pad;
-        } 
+        }
     }
 }
 
 // end of container styling
 
 .cols {
-    width: auto;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -67,18 +70,62 @@ $container-inner-pad-mob: 0 1.25rem;
     }
 
     &--2 {
-        width: 48%;
+        width: 100%;
     }
 
     &--3 {
-        width: 31%;
+        width: 100%;
     }
 
     &--4 {
-        width: 23%;
+        width: 100%;
     }
 
     &--5 {
-        width: 18%;
+        width: 100%;
+    }
+
+    @include sm {
+        &--2 {
+            width: 48%;
+        }
+
+        &--3 {
+            width: 48%;
+        }
+
+        &--4 {
+            width: 48%;
+        }
+
+        &--5 {
+            width: 48%;
+        }
+    }
+
+    @include md {
+
+        &--3 {
+            width: 31%;
+        }
+
+        &--4 {
+            width: 31%;
+        }
+
+        &--5 {
+            width: 31%;
+        }
+    }
+
+    @include lg {
+
+        &--4 {
+            width: 23%;
+        }
+
+        &--5 {
+            width: 18%;
+        }
     }
 }

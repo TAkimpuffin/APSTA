@@ -1,0 +1,309 @@
+// vars
+@use '../variables/' as *;
+
+.nav {
+    z-index: 9999;
+    position: relative;
+    display: flex;
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+
+        li {
+            padding: 1rem 1.25rem 0 1.25rem;
+            margin: 0 .25rem;
+            position: relative;
+            width: calc(100vw - 4rem);
+            color: white;
+        }
+    }
+
+    &__container {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: left;
+        width: 100vw;
+        min-width: 100%;
+        position: absolute;
+        top: 100%;
+        right: -200%;
+        transition: 0.35s ease-in-out;
+        background: $black;
+
+        &--active {
+            right: -1.25rem;
+            padding: 2rem 0;
+        }
+
+        li {
+            &.menu-item-has-children {
+                padding-bottom: 0;
+
+                >ul {
+                    display: block;
+                    padding-left: 1.5rem;
+
+                    &.menu-item-has-children {
+                        >ul {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+
+        li:last-child() {
+            padding-right: 0;
+        }
+    }
+
+    &__shop {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: fit-content;
+        min-width: 250px;
+        align-items: center;
+        width: 100%;
+        padding-top: 2.5rem ;
+
+        li {
+            padding: unset;
+
+            a {
+                padding: 1rem 1.25rem;
+                margin: 0 .25rem;
+                display: block;
+                transition: .25s ease-in-out;
+
+                i {
+                    color: $white;
+                }
+            }
+
+            &:hover {
+                a {
+                    i {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+
+    &__toggle {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        padding-left: 0.5rem;
+        cursor: pointer;
+
+        span {
+            height: 4px;
+            width: 29px;
+            content: "";
+            background: $primary;
+            margin: 0.4rem 0 0.4rem auto;
+            transition: 0.25s ease-in-out;
+        }
+
+        span:first-child,
+        span:last-child {
+            width: 37px;
+            margin: unset;
+            background: $primary;
+        }
+
+        &--active {
+            span {
+                background: transparent;
+                margin: 0;
+                height: 0;
+            }
+
+            span:first-child,
+            span:last-child {
+                transform-origin: center;
+                transform: rotate(-45deg);
+                display: block;
+                top: 2px;
+                background: $primary;
+                height: 4px;
+                position: relative;
+            }
+
+            span:last-child {
+                position: relative;
+                top: -2px;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    @include md {
+        &__container {
+            &--active {
+                right: -2.5rem;
+            }
+        }
+    }
+
+    @include lg {
+        align-items: center;
+
+        &__nav {
+            flex-direction: row;
+            li {
+                padding: 1.25rem;
+            }
+            ul {
+                justify-content: left;
+            }
+        }
+
+        &__shop {
+            width: 210px;
+            justify-content: space-between;
+            padding-top: unset;
+        }
+
+        &__container {
+            overflow: unset;
+            position: relative;
+            right: unset;
+            top: unset;
+            width: 100%;
+            flex-direction: row;
+            justify-content: right;
+
+            li {
+                width: unset;
+                padding: 1rem 1.25rem;
+                margin: 0 0.25rem;
+                display: block;
+                position: relative;
+
+                &.menu-item-has-children {
+                    position: relative;
+                    padding-right: 2.5rem;
+                    // padding-bottom: 1.5rem;
+                    &::after {
+                        position: absolute;
+                        right: .5rem;
+                        top: 1.5rem;
+                        content: url("../images/caret-down-solid.svg");
+                        height: .1rem;
+                        width: .1rem;
+                        display: block;
+                        transform: scale(4);
+                    }
+
+                    >ul {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background: $black;
+
+                        li {
+                            a {
+                                color: $white;
+                            }
+
+                            &:hover {
+                                transition: 0.25s ease-in-out;
+
+                                a {
+                                    color: $primary;
+                                }
+                            }
+                        }
+
+                        li.menu-item-has-children {
+                            position: relative;
+
+                            &::after {
+                                position: absolute;
+                                right: .5rem;
+                                top: 1.5rem;
+                                content: url("../images/caret-right-solid.svg");
+                                height: .1rem;
+                                width: .1rem;
+                                display: block;
+                                transform: scale(4);
+                            }
+
+                            >ul {
+                                display: none;
+                                position: absolute;
+                                top: 0%;
+                                left: 100%;
+                                background: $black;
+
+                                li {
+                                    a {
+                                        color: $white;
+                                    }
+
+                                    &:hover {
+                                        transition: 0.25s ease-in-out;
+
+                                        a {
+                                            color: $primary;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:hover {
+                                >ul {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+
+                        >ul {
+                            display: block;
+                        }
+                    }
+                }
+
+                a {
+                    color: $white;
+                    transition: 0.25s ease-in-out;
+                }
+
+                &:hover {
+                    a {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+
+        &__cart {
+            padding: 0 !important;
+        }
+
+        &__toggle {
+            @include md {
+                display: none;
+                padding-left: 1.5rem;
+
+                span {
+                    margin: 0.4rem auto;
+                }
+            }
+        }
+    }
+}

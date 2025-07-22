@@ -1,11 +1,29 @@
 @use '../variables/' as *;
 
 .btn {
-    display: block;
-    padding: 1rem;
-    color: $white;
     background: $primary;
-    border-radius: 3px;
-    // background: $beans;
-    text-transform: capitalize;
+    // border: 1px solid $primary;
+    color: $black;
+    border-radius: 6px;
+    padding: .25rem 1.25rem;
+    margin: 1rem 0;
+    display: flex;
+    transition: .25s ease-in-out;
+    width: fit-content;
+
+    &:hover {
+        color: white;
+    }
+    &--white {
+        color: $white;
+        border: 1px solid $white;
+
+        &:hover {
+            color: $primary;
+            background: $white;
+        }
+    }
+    &--center {
+        margin: 1.5rem auto;
+    }
 }
