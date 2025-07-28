@@ -1,0 +1,29 @@
+@use '../variables/' as *;
+
+.title {
+    &__wrapper {
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
+    h1 {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: $white;
+    }
+
+    &--primary, &--secondary, &--tertiary {
+        h1 {
+            color: $white;
+        }
+    }
+
+    &--white {
+        h1 {
+            color: $black;
+        }
+    }
+}

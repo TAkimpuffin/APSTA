@@ -12,5 +12,28 @@ register_nav_menus( array(
     'footerright'   => 'The right site footer menu',
 ) );
 
+require_once(get_theme_file_path().'/parts/parts.php');
+
+
+function block_style_enqueue() {
+    wp_enqueue_style(
+        'my-block-editor-styles',
+        get_template_directory_uri() . '/assets/css/style.css',
+        [],
+        filemtime(get_template_directory() . '/assets/css/style.css')
+    );
+}
+add_action('enqueue_block_editor_assets', 'block_style_enqueue');
+
+// function unsetGutenbergEditorStyles() {
+
+//     add_filter('block_editor_settings', function ($editor_settings) {
+//               unset($editor_settings['styles'][0]);
+//               return $editor_settings;
+//           }
+// );
+    
+// }
+// add_action( 'admin_init', 'unsetGutenbergEditorStyles' );
 
 ?>

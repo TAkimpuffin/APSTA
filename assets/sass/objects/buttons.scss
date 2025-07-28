@@ -12,17 +12,9 @@
     width: fit-content;
 
     &:hover {
-        color: white;
+        color: $black !important;
     }
-    &--white {
-        color: $white;
-        border: 1px solid $white;
 
-        &:hover {
-            color: $primary;
-            background: $white;
-        }
-    }
     &--center {
         margin: 1.5rem auto;
     }

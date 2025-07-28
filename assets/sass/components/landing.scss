@@ -1,0 +1,114 @@
+@use '../variables/' as *;
+
+.landing {
+    width: 100%;
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    min-height: 500px;
+    >img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: .9;
+
+        &::before {
+            opacity: .6;
+            transition: .5s ease-in-out;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: block;
+            content: '';
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        &::after {
+            position: absolute;
+            top: 40%;
+            width: 75%;
+            height: 150px;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: contain !important;
+            content: "";
+            z-index: 5;
+            left: 0%;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        &:hover {
+            &::before {
+                opacity: .95;
+            }
+        }
+
+    }
+
+    &--europe {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+
+        a {
+            &::before {
+                background: $eubrown;
+            }
+
+            &::after {
+                background: url('../images/TESTA.png');
+            }
+        }
+    }
+
+    &--america {
+        a {
+            &::before {
+                background: $usred;
+            }
+
+            &::after {
+                background: url('../images/NASTA.png');
+            }
+        }
+
+    }
+
+    &--asia {
+        a {
+            &::before {
+                background: $asbrown;
+            }
+
+            &::after {
+                background: url('../images/TAPSTA.png');
+            }
+        }
+    }
+
+
+
+    @include md {
+        width: 33%;
+        height: calc(100vh - 480.25px);
+
+        &--europe {
+            margin: 0;
+        }
+    }
+
+}

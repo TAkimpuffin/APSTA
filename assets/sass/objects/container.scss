@@ -34,6 +34,10 @@ $container-inner-pad-mob: 0 1.25rem;
         background: $black;
     }
 
+    &--TABlue {
+        background: $tablue;
+    }
+
     &__inner {
         width: 100%;
         display: flex;
@@ -67,6 +71,14 @@ $container-inner-pad-mob: 0 1.25rem;
 
     &--col-rev {
         flex-direction: column-reverse;
+    }
+
+    &--1of3 {
+        width: 100%;
+    }
+
+    &--2of3 {
+        width: 100%;
     }
 
     &--2 {
@@ -104,6 +116,14 @@ $container-inner-pad-mob: 0 1.25rem;
     }
 
     @include md {
+
+        &--1of3 {
+            width: 31%;
+        }
+
+        &--2of3 {
+            width: 64%;
+        }
 
         &--3 {
             width: 31%;

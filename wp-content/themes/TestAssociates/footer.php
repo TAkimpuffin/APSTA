@@ -1,34 +1,47 @@
+<?php if (get_field('show_cta')) : 
+$cta = get_field('universal_cta_body', 'options');?>
+<div class="container container--primary pad__small--vert">
+    <div class="container__inner cta">
+        <?php echo $cta; ?>
+    </div>
+</div>
+<?php endif; ?>
+
 <footer>
     <div class="container container--black pad--vert">
-        <div class="container__inner footer">
+        <div class="container__inner footer cols">
             <div class="cols--4 footer__body">
+                <h2>Say Hello</h2>
                 <?php 
-                    if (get_field('footer_body', 'options')):
-                        the_field('footer_body', 'options');
+                    if (get_field('footer_address', 'options')):
+                        the_field('footer_address', 'options');
                     endif;
                 ?>
             </div>
             <div class="cols--4 footer__nav">
+                <h2>Important Links</h2>
             <?php
                 wp_nav_menu(array(
                     'theme_location' => 'footerleft',
-                    'container' => 'nav__wrapper',
-                    'container_class' => 'nav',
-                    'menu_class' => 'nav__nav',
+                    'container' => 'footernav__wrapper',
+                    'container_class' => 'footernav',
+                    'menu_class' => 'footernav__nav',
                 ));
             ?>
             </div>
             <div class="cols--4 footer__terms">
+                <h2>Legal & Privacy</h2>
             <?php
                 wp_nav_menu(array(
                     'theme_location' => 'footerright',
-                    'container' => 'nav__wrapper',
-                    'container_class' => 'nav',
-                    'menu_class' => 'nav__nav',
+                    'container' => 'footernav__wrapper',
+                    'container_class' => 'footernav',
+                    'menu_class' => 'footernav__nav',
                 ));
             ?>
             </div>
             <div class="cols--4 footer__form">
+                <h2>Join Our Newsletter</h2>
                 <?php if(get_field('footer_form', 'options')):
                     the_field('footer_form', 'optoins');
                 endif; ?>
