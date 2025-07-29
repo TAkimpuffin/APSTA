@@ -1,0 +1,58 @@
+@use '../variables/' as *;
+@use '../fonts/fonts' as *;
+
+.hero {
+    &__wrapper {
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        min-height: 500px;
+    }
+
+    &__counter {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: $white;
+            width: 100%;
+            justify-content: center;
+            position: relative;
+            display: flex;
+            align-content: center;
+            flex-direction: row;
+            font-family: $font-regular-bold;
+
+            span {
+                height: 100%;
+                width: 2px;
+                background: white;
+                display: block;
+                margin: 0 1rem;
+            }
+
+            i {
+                align-content: center;
+                height: fit-content;
+                padding-top: .25rem;
+                padding-right: .75rem;
+            }
+        }
+    }
+
+    &__timer {
+        width: 100%;
+        text-align: center;
+        padding-top: 2.5rem;
+        font-size: 3rem;
+        color: $white;
+        span {
+            font-size: 1.25rem;
+            padding-right: 1rem;
+        }
+    }
+}

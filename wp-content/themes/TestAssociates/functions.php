@@ -25,6 +25,16 @@ function block_style_enqueue() {
 }
 add_action('enqueue_block_editor_assets', 'block_style_enqueue');
 
+add_action('admin_head', 'admin_styles');
+function admin_styles() {
+     echo '<style>
+            .wp-block {max-width: 1280px;}
+            .interface-interface-skeleton__sidebar {max-width: 500px; width: 100%;}
+            .interface-complementary-area__fill {max-width: 500px; width: 100% !important;}
+            .editor-sidebar {max-width: 500px; width: 100% !important;}
+            </style>';
+}
+
 // function unsetGutenbergEditorStyles() {
 
 //     add_filter('block_editor_settings', function ($editor_settings) {

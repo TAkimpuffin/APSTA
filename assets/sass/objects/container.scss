@@ -46,6 +46,11 @@ $container-inner-pad-mob: 0 1.25rem;
         max-width: $container-inner-maxwidth;
         padding: $container-inner-pad-mob;
 
+        &--narrow {
+            max-width: calc($container-inner-maxwidth - 400px);
+            background-color: red;
+        }
+
         @include md {
             padding: $container-inner-pad;
         }

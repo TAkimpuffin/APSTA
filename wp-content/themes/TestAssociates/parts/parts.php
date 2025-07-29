@@ -140,5 +140,20 @@ function flex_acf_init_block_types()
             'render_template' => 'parts/timeline.php',
         ));
 
+        acf_register_block_type(array(
+            'name' => 'Hero',
+            'title' => __('Hero Block'),
+            'description' => __('Hero section.'),
+            'category' => 'star-filled',
+            'icon' => 'welcome-widgets-menus',
+            'keywords' => ['hero', 'content'],
+            'supports' => [
+                'align' => true,
+                'mode' => true,
+                'jsx' => true
+            ],
+            'render_template' => 'parts/hero.php',
+        ));
+
     }
 }

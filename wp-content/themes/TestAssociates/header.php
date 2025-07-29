@@ -14,6 +14,8 @@
   <title><?php echo get_bloginfo('name') . ' | ' . get_the_title(); ?> </title>
   <script src="https://kit.fontawesome.com/a60028137b.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" />
 </head>
 
