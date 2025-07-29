@@ -1,33 +1,81 @@
+@use '../variables/' as *;
+@use '../fonts/fonts' as *;
+
 .masonry {
     display: flex;
-    justify-content: space-between;
-
+    padding: 0;
+    flex-direction: column;
+    &__inner {
+        max-width: 900px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
     &__block {
+        margin: 0 auto;
         width: 280px;
         height: 280px;
-        margin-bottom: 6px;
-        background-color: white;
+        margin-bottom: 8px;
+        background-color: $primary;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        color: $white;
+        text-align: center;
+        font-family: $font-regular-bold;
+        font-weight: 900;
+        font-size: 1.25rem;
+
+        img {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            margin-top: calc(50% - 100px);
+            margin-bottom: .5rem;
+        }
+
+        &__group {
+            height: 570px;
+            width: 280px;
+        }
     }
 
     &__reverse {
         flex-direction: row-reverse;
     }
 
-    &__2 {
-        .masonry__block:first-child {
-            width: 570px;
-        }
-    }
-
-    &__3 {
-        .masonry__block:first-child {
-            width: 570px;
-            height: 570px;
-        }
-
-        .masonry__block:last-child {
+    @include lg {
+        justify-content: space-between;
+        flex-direction: row;
+        &__block {
             width: 280px;
-            height: 570px;
+            max-width: unset;
+            margin: unset;
+            margin-bottom: 8px;
+            &--large {
+                width: 570px;
+                height: 570px;
+            }
+
+
+            &--medium {
+                width: 570px;
+                height: 280px;
+
+                img {
+                    margin-top: 7%;
+                }
+            }
+
+            &--mediumVert {
+                width: 280px;
+                height: 570px;
+
+                img {
+                    margin-top: 65%;
+                }
+            }
         }
+
     }
 }
