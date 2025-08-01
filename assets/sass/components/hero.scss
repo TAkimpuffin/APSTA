@@ -55,4 +55,12 @@
             padding-right: 1rem;
         }
     }
+
+    &__thankyou {
+        padding-top: 2.5rem;
+        width: 100%;
+        font-size: 3rem;
+        text-align: center;
+        color: $white;
+    }
 }
