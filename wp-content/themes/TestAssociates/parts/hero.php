@@ -14,4 +14,7 @@ $event_date = get_field('he_date');
             <span class="hero__thankyou" id="thank-you-message" style="display: none;">Thank you for attending!</span>
         </div>
     </div>
+    <div class="container__inner cols hero__buttons">
+        
+    </div>
 </div>

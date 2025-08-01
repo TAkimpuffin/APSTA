@@ -3,7 +3,6 @@
 $settings = get_field('fwc_settings');
 $vars = 'container--' . $settings['bg'] . ' pad--' . $settings['pad'];
 
-
 ?>
 
 <div class="container <?php echo $vars; ?>">
@@ -37,13 +36,15 @@ $vars = 'container--' . $settings['bg'] . ' pad--' . $settings['pad'];
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                 <?php elseif ($coltype == 'slider'):
-                    if (have_rows('fwc_slider')):
-                        while (have_rows('fwc_slider')):
-                            the_row();
-                            $img = get_sub_field('fwc_slider_img'); ?>
-                            <img src="<?php echo $img['url']; ?>" alt="<?php echo $url['alt']; ?>" class="fwc__slide">
-                        <?php endwhile;
-                    else: ?>
+                    if (have_rows('fwc_slider')): ?>
+                        <div class="fwc__slider">
+                            <?php while (have_rows('fwc_slider')):
+                                the_row();
+                                $img = get_sub_field('fwc_slider_img'); ?>
+                                <img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>" class="fwc__slide">
+                            <?php endwhile; ?>
+                        </div>
+                    <?php else: ?>
                         <p>sorry, no slides found.</p>
                     <?php endif;
 
@@ -55,16 +56,22 @@ $vars = 'container--' . $settings['bg'] . ' pad--' . $settings['pad'];
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
                 <?php elseif ($coltype == 'map'):
-                    $map = get_field('fwc_map'); ?>
-                    <iframe src="<?php echo $map; ?>" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+                    $map = get_field('fwc_map');
+                    if ($map != ''): ?>
+                        <iframe src="<?php echo $map; ?>" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <?php else: ?>
+                        <p>Map ID invalid.</p>
+                    <?php endif; ?>
                     <?php
                 else:
-                    $img = get_field('fwc_img'); ?>
-                    <img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
+                    $img = get_field('fwc_image');
+                    if ($img != ''): ?>
+                        <img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
+                    <?php else: ?>
+                        <p>Image not found.</p>
+                    <?php endif; ?>
                 <?php endif; ?>
-
             </div>
         </div>
     <?php endif; ?>

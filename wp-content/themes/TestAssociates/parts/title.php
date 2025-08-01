@@ -6,12 +6,13 @@ $vars = 'container--' . $settings['bg'] . ' pad--' . $settings['pad'];
 
 if (get_field('ttl_img')) :
 $bg = get_field('ttl_img');
+$bgurl = $bg['url'];
 else :
-    $bg = '';
+    $bgurl = '';
 endif;
 ?>
 
-<div class="container <?php echo $vars;?> title__wrapper" style="background: url('<?php echo $bg['url']; ?>');">
+<div class="container <?php echo $vars;?> title__wrapper" style="background: url('<?php echo $bgurl; ?>');">
     <div class="container__inner title title--<?php echo $settings['bg'];?>">
         <?php if (get_field('ttl_title')): ?>
             <h1><?php the_field('ttl_title'); ?></h1>

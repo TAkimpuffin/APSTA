@@ -62,7 +62,7 @@ function flex_acf_init_block_types()
                 'mode' => true,
                 'jsx' => true
             ],
-            'render_template' => 'parts/fwc.php',
+            'render_template' => 'parts/fw.php',
         ));
 
         acf_register_block_type(array(
@@ -153,6 +153,21 @@ function flex_acf_init_block_types()
                 'jsx' => true
             ],
             'render_template' => 'parts/hero.php',
+        ));
+
+        acf_register_block_type(array(
+            'name' => 'Spacer',
+            'title' => __('Spacer Block'),
+            'description' => __('Spacer section.'),
+            'category' => 'star-filled',
+            'icon' => 'welcome-widgets-menus',
+            'keywords' => ['spacer', 'content', 'gap'],
+            'supports' => [
+                'align' => true,
+                'mode' => true,
+                'jsx' => true
+            ],
+            'render_template' => 'parts/spacer.php',
         ));
 
     }
