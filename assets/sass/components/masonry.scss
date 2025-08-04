@@ -25,7 +25,7 @@
         font-family: $font-regular-bold;
         font-weight: 900;
         font-size: 1.25rem;
-
+        transition: .25s ease-in-out;
         img {
             width: 180px;
             height: 180px;
@@ -37,6 +37,10 @@
         &__group {
             height: 570px;
             width: 280px;
+        }
+
+        &:hover {
+            filter: brightness(.95);
         }
     }
 

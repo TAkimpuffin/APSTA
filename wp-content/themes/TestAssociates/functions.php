@@ -20,30 +20,9 @@ register_nav_menus(array(
 // necessary to use acf block editor stuff
 
 require_once(get_theme_file_path() . '/parts/parts.php');
-// function block_style_enqueue()
-// {
-//     wp_enqueue_style(
-//         'my-block-editor-styles',
-//         get_template_directory_uri() . '/assets/css/style.css',
-//         [],
-//         filemtime(get_template_directory() . '/assets/css/style.css')
-//     );
-// }
-// add_action('enqueue_block_editor_assets', 'block_style_enqueue');
 
-
-function block_editor_assets_enqueue() {
-    // Enqueue editor JS
-    // wp_enqueue_script(
-    //     'my-block-editor-script',
-    //     get_template_directory_uri() . '/assets/js/main.js',
-    //     ['wp-blocks', 'wp-element', 'wp-editor'], // dependencies
-    //     filemtime(get_template_directory() . '/assets/js/main.js'),
-    //     true // load in footer
-    // );
-
-    // Optional: enqueue your existing editor CSS
-    
+function block_editor_assets_enqueue()
+{
     wp_enqueue_style(
         'my-block-editor-styles',
         get_template_directory_uri() . '/assets/css/style.css',
@@ -66,17 +45,6 @@ function admin_styles()
             .editor-sidebar {max-width: 500px; width: 100% !important;}
             </style>';
 }
-
-// function unsetGutenbergEditorStyles() {
-
-//     add_filter('block_editor_settings', function ($editor_settings) {
-//               unset($editor_settings['styles'][0]);
-//               return $editor_settings;
-//           }
-// );
-
-// }
-// add_action( 'admin_init', 'unsetGutenbergEditorStyles' );
 
 
 // redirect for countried that can't use paypal
@@ -138,6 +106,29 @@ function redirect_indian_visitors_to_cat_invoice()
             }
         }
     }
+}
+
+
+// Date formatter function for hero
+
+function formatDateWithSuffix($dateString)
+{
+    $date = new DateTime($dateString);
+    $day = (int) $date->format('j');
+
+    // Determine ordinal suffix
+    if ($day % 10 == 1 && $day != 11) {
+        $suffix = 'st';
+    } elseif ($day % 10 == 2 && $day != 12) {
+        $suffix = 'nd';
+    } elseif ($day % 10 == 3 && $day != 13) {
+        $suffix = 'rd';
+    } else {
+        $suffix = 'th';
+    }
+
+    // Format final date string
+    return $day . $suffix . ' ' . $date->format('F Y');
 }
 
 ?>

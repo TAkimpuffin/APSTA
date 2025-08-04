@@ -5,17 +5,27 @@
     // border: 1px solid $primary;
     color: $black;
     border-radius: 6px;
-    padding: .25rem 1.25rem;
+    padding: .35rem 1.35rem;
     margin: 1rem 0;
     display: flex;
     transition: .25s ease-in-out;
     width: fit-content;
-
+    height: fit-content;
+    font-size: 1.15rem;
     &:hover {
         color: $black !important;
     }
 
     &--center {
         margin: 1.5rem auto;
+    }
+    
+    &--black {
+        color: $white;
+        background: $black;
+
+        &:hover {
+            color: $primary !important;
+        }
     }
 }

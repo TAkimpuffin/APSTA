@@ -22,7 +22,7 @@
 
 <?php if (get_field('show_cta')):
     $cta = get_field('universal_cta_body', 'options'); ?>
-    <div class="container container--primary pad__small--vert">
+    <div class="container container--primary pad__small--vert cta__wrapper">
         <div class="container__inner cta">
             <?php echo $cta; ?>
         </div>

@@ -7,6 +7,7 @@
         background-position: center !important;
         background-repeat: no-repeat !important;
         min-height: 500px;
+        border-bottom: 2px solid $black;
     }
 
     &__counter {
@@ -16,7 +17,7 @@
         justify-content: center;
 
         h2 {
-            font-size: 2rem;
+            font-size: 2.75rem;
             font-weight: bold;
             color: $white;
             width: 100%;
@@ -36,10 +37,10 @@
             }
 
             i {
-                align-content: center;
+                font-size: 2.5rem;
                 height: fit-content;
-                padding-top: .25rem;
                 padding-right: .75rem;
+                align-self: center;
             }
         }
     }
@@ -48,11 +49,24 @@
         width: 100%;
         text-align: center;
         padding-top: 2.5rem;
-        font-size: 3rem;
+        font-size: 4.2rem;
         color: $white;
         span {
             font-size: 1.25rem;
             padding-right: 1rem;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        a {
+            margin-left: 2.5rem;
+            margin-right: 2.5rem;
+            text-transform: capitalize;
         }
     }
 
