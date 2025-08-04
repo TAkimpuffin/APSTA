@@ -1,13 +1,13 @@
 <?php if (get_field('show_partners')): ?>
     <div class="container pad__small--vert">
-        <div class="container__inner partners">
+        <div class="container__inner footer__partners">
             <h2>Media Partner</h2>
-            <?php if (have_rows('partners', 'options')): ?>
+            <?php if (have_rows('sponsors_repeater', 'options')): ?>
                 <ul class="partners">
-                    <?php while (have_rows('partners', 'options')):
+                    <?php while (have_rows('sponsors_repeater', 'options')):
                         the_row();
-                        $img = get_sub_field('partners_partner');
-                        $link = get_sub_field('partners_link'); ?>
+                        $img = get_sub_field('sponsor_img');
+                        $link = get_sub_field('sponsor_link'); ?>
                         <li class="partners__partner">
                             <a href="<?php echo $link['url']; ?>"><img src="<?php echo $img['url'];?>" alt="<?php echo $img['alt']; ?>"></a>
                         </li>

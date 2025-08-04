@@ -1,0 +1,57 @@
+@use '../variables/' as *;
+
+.accordion {
+    &__title {
+        width: 100%;
+        color: $primary;
+        background: $white;
+        border-bottom: 2px solid $primary;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        margin-top: .5rem;
+        border-radius: 10px;
+        transition: .25s ease-in-out;
+        h3 {
+            font-size: 2rem;
+            padding: .75rem;
+        }
+        i {
+            padding: .5rem;
+            font-size: 2rem;
+            align-self: center;
+            transition: .25s ease-in-out;
+        }
+
+        &:hover {
+            color: $white;
+            background: $primary;
+            border-bottom: 2px solid $primary;
+
+            i {
+                transform-origin: center;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+
+    &__row {
+        display: none;
+        
+        &--active {
+            i {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    &__card {
+        margin-bottom: 1.5rem;
+        border-radius: 20px;
+        padding: 1.5rem;
+        width: 100%;
+        border: 1px solid $primary;
+    }
+}

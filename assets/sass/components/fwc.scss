@@ -14,8 +14,13 @@
         h2 {
             text-align: left;
         }
+
         p {
             padding-bottom: 1rem;
+        }
+
+        ul {
+            list-style: disc;
         }
     }
 
@@ -36,4 +41,29 @@
 
 .place-card-large {
     display: none !important;
+}
+
+.contact {
+    
+    &__icons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        a {
+            i {
+                padding: .75rem;
+                border-radius: 50px;
+                background: $primary;
+                font-size: 1.25rem;
+                margin: .5rem .5rem 1.5rem 0;
+                color: $white;
+                transition: .25s ease-in-out;
+
+                &:hover {
+                    color: $black;
+                }
+            }
+        }
+    }
 }

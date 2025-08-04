@@ -6,8 +6,8 @@ $vars = 'container--' . $settings['bg'] . ' pad--' . $settings['pad'];
 ?>
 
 <div class="container <?php echo $vars; ?>">
-    <?php if (get_field('fwc_cols') == '1'): ?>
-        <div class="container__inner fwc">
+    <?php if (get_field('fwc_columns') == '1'): ?>
+        <div class="container__inner fwc fwc__content">
             <?php if (get_field('fwc_title')): ?>
                 <h2><?php the_field('fwc_title'); ?></h2>
             <?php endif; ?>
@@ -22,17 +22,17 @@ $vars = 'container--' . $settings['bg'] . ' pad--' . $settings['pad'];
         ?>
 
         <div class="container__inner cols fwc">
-            <?php if (get_field(selector: 'fwc_title') && $titlepos != 'inline'): ?>
+            <?php if (get_field( 'fwc_title') && $titlepos != 'inline'): ?>
                 <h2><?php the_field('fwc_title'); ?></h2>
             <?php endif; ?>
             <div class="cols--2 fwc__content">
-                <?php if (get_field(selector: 'fwc_title') && $titlepos == 'inline'): ?>
+                <?php if (get_field( 'fwc_title') && $titlepos == 'inline'): ?>
                     <h2><?php the_field('fwc_title'); ?></h2>
                 <?php endif; ?>
                 <?php the_field('fwc_body'); ?>
             </div>
             <div class="cols--2 fwc__<?php echo $coltype; ?> fwc--<?php echo $hasborder; ?>">
-                <?php if ($coltype == 'content'):
+                <?php if ($coltype == 'text'):
                     the_field('fwc_body_2');
 
                 elseif ($coltype == 'map'): ?>

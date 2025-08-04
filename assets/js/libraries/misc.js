@@ -69,6 +69,23 @@ $(document).ready(function () {
         }
     });
 
+
+    //================= accordions =======================
+
+    $('.accordion__title').click(function () {
+        var accordion = $(this).next('.accordion__row');
+        $(this).toggleClass('accordion__row--active');
+
+        if (accordion.is(':visible')) {
+            accordion.stop(true, true).slideUp();
+            // content.css('display', 'none');
+        } else {
+            // content.css('display', 'block');
+            accordion.stop(true, true).slideDown().css('display', 'block');
+        }
+
+    });
+
     //================= sliders ==========================
 
     $(document).ready(function () {

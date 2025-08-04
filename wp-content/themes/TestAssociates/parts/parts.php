@@ -170,5 +170,35 @@ function flex_acf_init_block_types()
             'render_template' => 'parts/spacer.php',
         ));
 
+        acf_register_block_type(array(
+            'name' => 'Entry Process',
+            'title' => __('Entry Process Block'),
+            'description' => __('Entry Process section.'),
+            'category' => 'star-filled',
+            'icon' => 'welcome-widgets-menus',
+            'keywords' => ['entry', 'content', 'table'],
+            'supports' => [
+                'align' => true,
+                'mode' => true,
+                'jsx' => true
+            ],
+            'render_template' => 'parts/entry_example.php',
+        ));
+
+        acf_register_block_type(array(
+            'name' => 'Accordion Process',
+            'title' => __('Accordion Block'),
+            'description' => __('Accordion section.'),
+            'category' => 'star-filled',
+            'icon' => 'welcome-widgets-menus',
+            'keywords' => ['accordion', 'content', 'animated', 'flexible'],
+            'supports' => [
+                'align' => true,
+                'mode' => true,
+                'jsx' => true
+            ],
+            'render_template' => 'parts/accordion.php',
+        ));
+
     }
 }
