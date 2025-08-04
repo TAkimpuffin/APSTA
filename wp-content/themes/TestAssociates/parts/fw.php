@@ -18,13 +18,17 @@ $vars = 'container--' . $settings['bg'] . ' pad--' . $settings['pad'];
         <?php
         $coltype = get_field('fwc_coltype');
         $hasborder = get_field('fwc_hadborder');
+        $titlepos = get_field('fwc_titlepos');
         ?>
 
         <div class="container__inner cols fwc">
-            <?php if (get_field('fwc_title')): ?>
+            <?php if (get_field(selector: 'fwc_title') && $titlepos != 'inline'): ?>
                 <h2><?php the_field('fwc_title'); ?></h2>
             <?php endif; ?>
             <div class="cols--2 fwc__content">
+                <?php if (get_field(selector: 'fwc_title') && $titlepos == 'inline'): ?>
+                    <h2><?php the_field('fwc_title'); ?></h2>
+                <?php endif; ?>
                 <?php the_field('fwc_body'); ?>
             </div>
             <div class="cols--2 fwc__<?php echo $coltype; ?> fwc--<?php echo $hasborder; ?>">

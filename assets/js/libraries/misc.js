@@ -73,7 +73,7 @@ $(document).ready(function () {
 
     $(document).ready(function () {
         $('.fwc__slider').slick({
-            dots: true,
+            dots: false,
             infinite: true,
             speed: 300,
             autoplay: true,
