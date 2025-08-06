@@ -15,7 +15,7 @@
   <script src="https://kit.fontawesome.com/a60028137b.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" />
 </head>
 
@@ -48,7 +48,15 @@
             ?>
             <ul class="nav__shop">
               <li><a class="btn" href="/categories">Enter Now</a></li>
-              <li class="nav__cart"><a href="/checkout"><i class="fa-solid fa-cart-shopping"></i></a></li>
+              <li class="nav__cart">
+                <a href="<?php echo wc_get_cart_url(); ?>"><i class="fa-solid fa-cart-shopping"></i></a>
+                <?php $total_items = WC()->cart->get_cart_contents_count();
+                if ($total_items != 0): ?>
+                  <span>
+                    <p><?php echo $total_items; ?></p>
+                  </span>
+                <?php endif; ?>
+              </li>
             </ul>
           </div>
         </nav>

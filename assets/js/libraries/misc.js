@@ -65,10 +65,33 @@ $(document).ready(function () {
         if (background.is(':visible')) {
             background.stop(true, true).slideUp();
         } else {
-            console.log('bwee');
         }
     });
 
+
+    //=================== category modals ===============
+
+
+    $('.product__card').click(function () {
+        var cat = $(this).next('.product__modal');
+        $(this).toggleClass('product__modal--active');
+
+        if (cat.is(':visible')) {
+            console.log('in one');
+            cat.stop(true, true).slideUp();
+        } else {
+            console.log('in two');
+            cat.stop(true, true).slideDown().css('display', 'block');
+        }
+
+
+        $('.product__modalclose').click(function () {
+            if (cat.is(':visible')) {
+                cat.stop(true, true).slideUp();
+            } else {
+            }
+        });
+    });
 
     //================= accordions =======================
 

@@ -13,6 +13,12 @@
         color: $white;
     }
 
+    &--right {
+        td {
+            text-align: right;
+        }
+    }
+
     thead {
         tr {
             th {

@@ -131,4 +131,29 @@ function formatDateWithSuffix($dateString)
     return $day . $suffix . ' ' . $date->format('F Y');
 }
 
+
+// WooCom custom template stuff
+
+
+
+// function custom_product_title_message() {
+
+// echo '<p>Custom message after the product title!</p>';
+
+// }
+
+// add_action('woocommerce_single_product_summary', 'custom_product_title_message', 20);
+
+// //Add filters to modify content before display. For instance, to change product prices, use a filter like this:
+
+// function custom_price_format($price, $product) {
+
+// return 'Special Price: ' . $price;
+
+// }
+
+// add_filter('woocommerce_get_price_html', 'custom_price_format', 10, 2);
+
+
+
 ?>

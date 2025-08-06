@@ -69,7 +69,7 @@
                     <td ></td>
                     <td ></td>
                 </tr>
-                <tr>
+                <tr class="process--right">
                     <td >Marks out of 5</td>
                     <td >/5</td>
                     <td >/5</td>

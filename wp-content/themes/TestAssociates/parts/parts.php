@@ -200,5 +200,20 @@ function flex_acf_init_block_types()
             'render_template' => 'parts/accordion.php',
         ));
 
+        acf_register_block_type(array(
+            'name' => 'WooCommerse Loop Process',
+            'title' => __('WooCommerse Loop Block'),
+            'description' => __('WooCommerse Loop section.'),
+            'category' => 'star-filled',
+            'icon' => 'welcome-widgets-menus',
+            'keywords' => ['WooCommerse', 'posts', 'products', 'filter', 'modal'],
+            'supports' => [
+                'align' => true,
+                'mode' => true,
+                'jsx' => true
+            ],
+            'render_template' => 'parts/woocom_loop.php',
+        ));
+
     }
 }

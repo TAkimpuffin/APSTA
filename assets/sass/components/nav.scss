@@ -48,6 +48,7 @@
                     padding-left: 0;
                     display: block;
                     padding: 0 .5rem .5rem .5rem;
+
                     >li {
                         min-width: 10rem;
                     }
@@ -75,7 +76,7 @@
         min-width: 250px;
         align-items: center;
         width: 100%;
-        padding-top: 2.5rem ;
+        padding-top: 2.5rem;
 
         li {
             padding: unset;
@@ -97,6 +98,31 @@
                         color: $primary;
                     }
                 }
+            }
+        }
+    }
+
+    &__cart {
+            position: relative;
+        a {
+            position: relative;
+        }
+
+        >span {
+            position: absolute;
+            top: .5rem;
+            right: 1rem;
+
+            p {
+                background: #D9534F;
+                border-radius: 20px;
+                height: 15px;
+                width: 15px;
+                color: #fff;
+                position: relative;
+                display: block;
+                text-align: center;
+                font-size: 0.7rem;
             }
         }
     }
@@ -163,9 +189,11 @@
 
         &__nav {
             flex-direction: row;
+
             li {
                 padding: 1.25rem .75rem;
             }
+
             ul {
                 justify-content: left;
             }
@@ -196,6 +224,7 @@
                 &.menu-item-has-children {
                     position: relative;
                     padding-right: 2.5rem;
+
                     // padding-bottom: 1.5rem;
                     &::after {
                         position: absolute;
@@ -233,7 +262,7 @@
                             position: relative;
 
                             &::after {
-                                position: absolute; 
+                                position: absolute;
                                 right: .5rem;
                                 top: -2rem;
                                 content: url("../images/caret-right-solid.svg");

@@ -1,0 +1,85 @@
+@use '../variables/' as *;
+
+.woocom {
+    &__itemcol {
+        width: 100%;
+
+        @include md {
+            width: 60%;
+        }
+    }
+
+    &__cartcol {
+        width: 100%;
+
+        .cart-collaterals {
+            .cart_totals {
+                width: 100%;
+                right: unset;
+            }
+        }
+
+        @include md {
+            width: 30%;
+        }
+    }
+
+    .woocommerce {
+        >code {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+}
+
+.coupon {
+    display: flex;
+    width: 100%;
+    margin-bottom: .5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    input,
+    button {
+        width: 100% !important;
+    }
+
+    input {
+        display: flex;
+    }
+
+    button {
+        text-align: center;
+    }
+
+    @include md {
+        input {
+            width: 75% !important;
+        }
+
+        button {
+            width: 21.5% !important;
+        }
+    }
+}
+
+.actions {
+
+    button,
+    .coupon>button,
+    .wc-proceed-to-checkout>.checkout-button {
+        background: $primary !important;
+        background-color: $primary !important;
+        color: $white !important;
+        border: 2px solid $primary;
+        transition: .25s ease-in-out;
+
+        &:hover {
+            background: $white !important;
+            color: $black !important;
+        }
+    }
+}
