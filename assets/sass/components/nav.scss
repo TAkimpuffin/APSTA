@@ -16,7 +16,6 @@
 
         li {
             padding: .5rem .75rem 0 .5 1.25rem;
-            //margin: 0 .25rem;
             position: relative;
             width: calc(100vw - 4rem);
             color: $black;
@@ -63,7 +62,6 @@
                 >ul {
                     padding-left: 0;
                     display: block;
-                    //padding: 0 .5rem .5rem .5rem;
                     background: $white;
                     color: $black;
                     padding-left: 1rem;
@@ -252,20 +250,17 @@
             justify-content: right;
             background: $black;
             margin-top: 0;
-
+            padding-bottom: 0;
             li {
                 color: $white;
                 width: unset;
                 padding: 1rem .75rem;
-                //margin: 0 0.25rem;
                 display: block;
                 position: relative;
 
                 &.menu-item-has-children {
                     position: relative;
                     padding-right: 2.5rem;
-
-                    // padding-bottom: 1.5rem;
                     &::after {
                         position: absolute;
                         right: .5rem;
