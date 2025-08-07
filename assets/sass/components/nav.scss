@@ -11,17 +11,24 @@
         flex-direction: column;
         flex-wrap: wrap;
         align-content: center;
+        background: $white;
+        padding-top: 2rem;
 
         li {
-            padding: 1rem .75rem 0 1.25rem;
-            margin: 0 .25rem;
+            padding: .5rem .75rem 0 .5 1.25rem;
+            //margin: 0 .25rem;
             position: relative;
             width: calc(100vw - 4rem);
-            color: white;
+            color: $black;
+
+            a {
+                color: $black;
+            }
         }
     }
 
     &__container {
+        margin-top: 1.35rem;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -33,28 +40,43 @@
         top: 100%;
         right: -200%;
         transition: 0.35s ease-in-out;
-        background: $black;
+        background: $white;
+        border-bottom: 5px solid $black;
 
         &--active {
             right: -1.25rem;
-            padding: 2rem 0;
+            padding: 0 0 2rem 0;
         }
 
         li {
+            a {
+                border-bottom: 1px solid $black;
+                margin-bottom: .5rem;
+                width: 100%;
+                display: block;
+                padding-bottom: .5rem;
+            }
+
             &.menu-item-has-children {
                 padding-bottom: 0;
 
                 >ul {
                     padding-left: 0;
                     display: block;
-                    padding: 0 .5rem .5rem .5rem;
+                    //padding: 0 .5rem .5rem .5rem;
+                    background: $white;
+                    color: $black;
+                    padding-left: 1rem;
 
                     >li {
                         min-width: 10rem;
+                        width: 100%;
                     }
 
                     &.menu-item-has-children {
                         >ul {
+                            background: $white;
+                            color: $black;
                             display: block;
                         }
                     }
@@ -88,7 +110,11 @@
                 transition: .25s ease-in-out;
 
                 i {
-                    color: $white;
+                    color: $black;
+
+                    @include lg {
+                        color: $white;
+                    }
                 }
             }
 
@@ -103,9 +129,12 @@
     }
 
     &__cart {
-            position: relative;
+        position: relative;
+        border-bottom: none;
+
         a {
             position: relative;
+            border-bottom: none !important;
         }
 
         >span {
@@ -118,7 +147,7 @@
                 border-radius: 20px;
                 height: 15px;
                 width: 15px;
-                color: #fff;
+                color: $white;
                 position: relative;
                 display: block;
                 text-align: center;
@@ -189,9 +218,17 @@
 
         &__nav {
             flex-direction: row;
+            background: $black;
+            padding-top: unset;
 
             li {
                 padding: 1.25rem .75rem;
+
+                a {
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                    border-bottom: none;
+                }
             }
 
             ul {
@@ -213,11 +250,14 @@
             width: 100%;
             flex-direction: row;
             justify-content: right;
+            background: $black;
+            margin-top: 0;
 
             li {
+                color: $white;
                 width: unset;
                 padding: 1rem .75rem;
-                margin: 0 0.25rem;
+                //margin: 0 0.25rem;
                 display: block;
                 position: relative;
 
@@ -242,11 +282,12 @@
                         position: absolute;
                         top: 100%;
                         left: 0;
-                        background: $black;
+                        background: $white;
+                        color: $white;
 
                         li {
                             a {
-                                color: $white;
+                                color: $black;
                             }
 
                             &:hover {
@@ -277,11 +318,11 @@
                                 position: absolute;
                                 top: 0%;
                                 left: 100%;
-                                background: $black;
+                                background: $white;
 
                                 li {
                                     a {
-                                        color: $white;
+                                        color: $black;
                                     }
 
                                     &:hover {
@@ -326,6 +367,7 @@
 
         &__cart {
             padding: 0 !important;
+            border-bottom: none;
         }
 
         &__toggle {
