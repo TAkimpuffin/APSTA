@@ -54,8 +54,9 @@ $bg = get_field('cardsbg', 'options');
 					<div class="product__contact"><a href=""><i class="fa-solid fa-envelope"></i></a></div>
 				</div>
 				<div class="product__title">
-				<h2><?php echo esc_html($product->get_name()); ?></h2>
-				<a href="<?php echo get_bloginfo('url'); ?>/sponsorship-packages" target="_blank" class="btn btn--textwhite">Sponsor this category</a>
+					<h2><?php echo esc_html($product->get_name()); ?></h2>
+					<a href="<?php echo get_bloginfo('url'); ?>/sponsorship-packages" target="_blank"
+						class="btn btn--textwhite">Sponsor this category</a>
 				</div>
 
 				<div class="product__info">
@@ -66,8 +67,16 @@ $bg = get_field('cardsbg', 'options');
 					<div class="product__cart add-to-cart">
 						<?php woocommerce_template_loop_add_to_cart(); ?>
 					</div>
-					<?php echo $product->get_price_html(); ?>
 
+					<?php if (get_field('spo_price', get_the_ID()) == 'product'): ?>
+						<p class="product__cart"><?php echo $product->get_price_html(); ?></p>
+					<?php else: ?>
+						<p class="product__cart"><?php the_field('spo_customprice', get_the_ID()); ?></p>
+					<?php endif; ?>
+				</div>
+
+				<div class="product__price">
+					<p>(Price may vary depending on conversion rates.)</p>
 				</div>
 
 

@@ -37,7 +37,6 @@ $pretty_date = formatDateWithSuffix($event_date);
             endif;
 
         else:
-            echo 'in two';
             if (have_rows('he_postbuttons')):
                 while (have_rows('he_postbuttons')):
                     the_row();

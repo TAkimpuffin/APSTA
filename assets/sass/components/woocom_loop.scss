@@ -211,7 +211,8 @@
 
     &__cart {
         display: flex;
-
+        align-self: center;
+        font-size: 1.25rem;
         a {
             background: $primary;
             // border: 1px solid $primary;

@@ -22,20 +22,22 @@ $vars = 'container--' . $settings['bg'] . ' pad--' . $settings['pad'];
         ?>
 
         <div class="container__inner cols fwc">
-            <?php if (get_field( 'fwc_title') && $titlepos != 'inline'): ?>
-                <h2><?php the_field('fwc_title'); ?></h2>
+            <?php if (get_field('fwc_title') && $titlepos != 'inline'): ?>
+                <h2 class="fwc__title"><?php the_field('fwc_title'); ?></h2>
             <?php endif; ?>
             <div class="cols--2 fwc__content">
-                <?php if (get_field( 'fwc_title') && $titlepos == 'inline'): ?>
+                <?php if (get_field('fwc_title') && $titlepos == 'inline'): ?>
                     <h2><?php the_field('fwc_title'); ?></h2>
                 <?php endif; ?>
                 <?php the_field('fwc_body'); ?>
             </div>
             <div class="cols--2 fwc__<?php echo $coltype; ?> fwc--<?php echo $hasborder; ?>">
-                <?php if ($coltype == 'text'):
-                    the_field('fwc_body_2');
+                <?php if ($coltype == 'text'): ?>
+                    <div class="fwc__content">
+                        <?php the_field('fwc_body_2'); ?>
+                    </div>
 
-                elseif ($coltype == 'map'): ?>
+                <?php elseif ($coltype == 'map'): ?>
                     <iframe src="<?php the_field('fwc_map'); ?>" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
 

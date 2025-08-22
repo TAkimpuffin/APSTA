@@ -1,0 +1,120 @@
+@use '../variables/' as *;
+
+.spotab {
+    padding: 2.5rem 0 0 0;
+
+    h2 {
+        width: 100%;
+        padding-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    &__button {
+        >h2 {
+            width: 100%;
+            text-align: center;
+            font-size: 1.75rem;
+            padding-bottom: 1.5rem;
+            font-weight: bolder;
+        }
+
+        >span {
+            margin: 0 auto;
+            width: 75px;
+            height: 75px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            background: black;
+            transition: .5s ease-in-out;
+            border-radius: 200px;
+
+            a {
+                width: 100%;
+                text-align: center;
+                align-content: center;
+                color: white;
+                font-size: 2.5rem;
+            }
+
+
+            &:hover {
+                transform: scale(1.1) !important;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__up {
+        padding-top: 2.5rem;
+    }
+
+    &__inner {
+        padding: 0 .75rem;
+        background: #f7ece1;
+    }
+
+    &__row,
+    &__rows {
+        width: 100%;
+    }
+
+    &__rows {
+        &--headers {
+            background: $primary;
+            color: $white;
+            padding-left: .75rem;
+            padding-right: .75rem;
+        }
+
+        h3 {
+            width: 100%;
+            padding-top: 1rem;
+            padding-bottom: .75rem;
+        }
+    }
+
+    &__row {
+        border-bottom: 2px solid white;
+
+        &--header {
+            border-bottom: none;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__cel {
+        padding: .5rem;
+        width: 25%;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        border-left: 2px solid white;
+
+        &--dark {
+            background: #edd4ba !important;
+        }
+
+        &--header {
+            border-left: 2px solid white;
+
+            p {
+                font-weight: bolder;
+
+            }
+        }
+
+        // &:last-child {
+        //     border-right: none;
+        // }
+
+        i,
+        p {
+            margin: 0 auto;
+        }
+    }
+}

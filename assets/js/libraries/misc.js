@@ -77,10 +77,8 @@ $(document).ready(function () {
         $(this).toggleClass('product__modal--active');
 
         if (cat.is(':visible')) {
-            console.log('in one');
             cat.stop(true, true).slideUp();
         } else {
-            console.log('in two');
             cat.stop(true, true).slideDown().css('display', 'block');
         }
 
@@ -124,5 +122,33 @@ $(document).ready(function () {
             slidesToScroll: 1,
         });
     });
+
+
+    //================== finalist cards ====================
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    if (isTouchDevice) {
+        $('.fin__card').on('click touchstart', function (e) {
+            const $card = $(this);
+
+            // Prevent double-tap propagation
+            if (!$card.hasClass('is-flipped')) {
+                // Close any other open cards (optional)
+                $('.fin__card.is-flipped').not($card).removeClass('is-flipped');
+            }
+
+            $card.toggleClass('is-flipped');
+
+            // Prevent bubbling to parent elements
+            e.stopPropagation();
+        });
+
+        // Optional: Tap outside to close any flipped card
+        $(document).on('click touchstart', function (e) {
+            if (!$(e.target).closest('.fin__card').length) {
+                $('.fin__card.is-flipped').removeClass('is-flipped');
+            }
+        });
+    }
 
 });

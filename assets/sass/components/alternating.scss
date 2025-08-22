@@ -1,3 +1,26 @@
 @use '../variables/' as *;
 @use '../fonts/fonts' as *;
 
+.alt {
+
+    &--reverse {
+        @include md {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__body {
+        h2,p,h3 {
+            width: 100%;
+        }
+    }
+
+    &__img {
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}

@@ -2,6 +2,8 @@
 $settings = get_field('ma_settings');
 
 $vars = 'pad--' . $settings['pad'] . ' container--' . $settings['bg'];
+
+$bg = get_field('cardsbg', 'options');
 ?>
 <div class="container <?php echo $vars; ?>">
     <div class="masonry__inner">
@@ -16,7 +18,6 @@ $vars = 'pad--' . $settings['pad'] . ' container--' . $settings['bg'];
                     class="container__inner container__inner--narrow cols masonry masonry__<?php echo $layout; ?> masonry__<?php echo $direction; ?>">
 
                     <?php if ($layout == '1'):
-                        $bg1 = get_sub_field('ma_bg_1');
                         $fg1 = get_sub_field('ma_fg_1');
                         $link1 = get_sub_field('ma_link_1');
                         $bg2 = get_sub_field('ma_bg_2');
@@ -27,39 +28,37 @@ $vars = 'pad--' . $settings['pad'] . ' container--' . $settings['bg'];
                         $link3 = get_sub_field('ma_link_3');
                         ?>
 
-                        <a href="<?php echo $link1['title']; ?>" class="masonry__block masonry__block--small">
+                        <a href="<?php echo $link1['title']; ?>" class="masonry__block masonry__block--small" style="background: url(<?php echo $bg; ?>);">
                             <img src="<?php echo $fg1['url']; ?>" alt="<?php echo $fg1['alt']; ?>">
                             <?php echo $link1['title']; ?>
                         </a>
-                        <a href="<?php echo $link2['title']; ?>" class="masonry__block masonry__block--small">
+                        <a href="<?php echo $link2['title']; ?>" class="masonry__block masonry__block--small" style="background: url(<?php echo $bg; ?>);">
                             <img src="<?php echo $fg2['url']; ?>" alt="<?php echo $fg2['alt']; ?>">
                             <?php echo $link2['title']; ?>
                         </a>
-                        <a href="<?php echo $link3['title']; ?>" class="masonry__block masonry__block--small">
+                        <a href="<?php echo $link3['title']; ?>" class="masonry__block masonry__block--small" style="background: url(<?php echo $bg; ?>);">
                             <img src="<?php echo $fg3['url']; ?>" alt="<?php echo $fg3['alt']; ?>">
                             <?php echo $link3['title']; ?>
                         </a>
 
 
                     <?php elseif ($layout == '2'):
-                        $bg1 = get_sub_field('ma_bg_1');
                         $fg1 = get_sub_field('ma_fg_1');
                         $link1 = get_sub_field('ma_link_1');
                         $bg2 = get_sub_field('ma_bg_2');
                         $fg2 = get_sub_field('ma_fg_2');
                         $link2 = get_sub_field('ma_link_2'); ?>
 
-                        <a href="<?php echo $link1['title']; ?>" class="masonry__block masonry__block--medium">
+                        <a href="<?php echo $link1['title']; ?>" class="masonry__block masonry__block--medium" style="background: url(<?php echo $bg; ?>);">
                             <img src="<?php echo $fg1['url']; ?>" alt="<?php echo $fg1['alt']; ?>">
                             <?php echo $link1['title']; ?>
                         </a>
-                        <a href="<?php echo $link2['title']; ?>" class="masonry__block masonry__block--small">
+                        <a href="<?php echo $link2['title']; ?>" class="masonry__block masonry__block--small" style="background: url(<?php echo $bg; ?>);">
                             <img src="<?php echo $fg2['url']; ?>" alt="<?php echo $fg2['alt']; ?>">
                             <?php echo $link2['title']; ?>
                         </a>
 
                     <?php elseif ($layout == '3'):
-                        $bg1 = get_sub_field('ma_bg_1');
                         $fg1 = get_sub_field('ma_fg_1');
                         $link1 = get_sub_field('ma_link_1');
                         $bg2 = get_sub_field('ma_bg_2');
@@ -70,17 +69,17 @@ $vars = 'pad--' . $settings['pad'] . ' container--' . $settings['bg'];
                         $link3 = get_sub_field('ma_link_3');
                         ?>
 
-                        <a href="<?php echo $link1['title']; ?>" class="masonry__block masonry__block--large">
+                        <a href="<?php echo $link1['title']; ?>" class="masonry__block masonry__block--large" style="background: url(<?php echo $bg; ?>);">
                             <img src="<?php echo $fg1['url']; ?>" alt="<?php echo $fg1['alt']; ?>">
                             <?php echo $link1['title']; ?>
                         </a>
 
                         <span class="masonry__group">
-                            <a href="<?php echo $link2['title']; ?>" class="masonry__block masonry__block--small">
+                            <a href="<?php echo $link2['title']; ?>" class="masonry__block masonry__block--small" style="background: url(<?php echo $bg; ?>);">
                                 <img src="<?php echo $fg2['url']; ?>" alt="<?php echo $fg2['alt']; ?>">
                                 <?php echo $link2['title']; ?>
                             </a>
-                            <a href="<?php echo $link3['title']; ?>" class="masonry__block masonry__block--small">
+                            <a href="<?php echo $link3['title']; ?>" class="masonry__block masonry__block--small" style="background: url(<?php echo $bg; ?>);">
                                 <img src="<?php echo $fg3['url']; ?>" alt="<?php echo $fg3['alt']; ?>">
                                 <?php echo $link3['title']; ?>
                             </a>
@@ -88,18 +87,17 @@ $vars = 'pad--' . $settings['pad'] . ' container--' . $settings['bg'];
 
 
                     <?php elseif ($layout == '4'):
-                        $bg1 = get_sub_field('ma_bg_1');
                         $fg1 = get_sub_field('ma_fg_1');
                         $link1 = get_sub_field('ma_link_1');
                         $bg2 = get_sub_field('ma_bg_2');
                         $fg2 = get_sub_field('ma_fg_2');
                         $link2 = get_sub_field('ma_link_2'); ?>
 
-                        <a href="<?php echo $link1['title']; ?>" class="masonry__block masonry__block--large">
+                        <a href="<?php echo $link1['title']; ?>" class="masonry__block masonry__block--large" style="background: url(<?php echo $bg; ?>);">
                             <img src="<?php echo $fg1['url']; ?>" alt="<?php echo $fg1['alt']; ?>">
                             <?php echo $link1['title']; ?>
                         </a>
-                        <a href="<?php echo $link2['title']; ?>" class="masonry__block masonry__block--mediumVert">
+                        <a href="<?php echo $link2['title']; ?>" class="masonry__block masonry__block--mediumVert" style="background: url(<?php echo $bg; ?>);">
                             <img src="<?php echo $fg2['url']; ?>" alt="<?php echo $fg2['alt']; ?>">
                             <?php echo $link2['title']; ?>
                         </a>

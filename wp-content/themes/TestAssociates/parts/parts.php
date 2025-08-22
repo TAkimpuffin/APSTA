@@ -186,7 +186,7 @@ function flex_acf_init_block_types()
         ));
 
         acf_register_block_type(array(
-            'name' => 'Accordion Process',
+            'name' => 'Accordion',
             'title' => __('Accordion Block'),
             'description' => __('Accordion section.'),
             'category' => 'star-filled',
@@ -206,13 +206,73 @@ function flex_acf_init_block_types()
             'description' => __('WooCommerse Loop section.'),
             'category' => 'star-filled',
             'icon' => 'welcome-widgets-menus',
-            'keywords' => ['WooCommerse', 'posts', 'products', 'filter', 'modal'],
+            'keywords' => ['WooCommerce', 'posts', 'products', 'filter', 'modal'],
             'supports' => [
                 'align' => true,
                 'mode' => true,
                 'jsx' => true
             ],
             'render_template' => 'parts/woocom_loop.php',
+        ));
+
+        acf_register_block_type(array(
+            'name' => 'Winners',
+            'title' => __('Winners Block'),
+            'description' => __('Winners section.'),
+            'category' => 'star-filled',
+            'icon' => 'welcome-widgets-menus',
+            'keywords' => ['alternating', 'content', 'winners', 'awards', 'repeating'],
+            'supports' => [
+                'align' => true,
+                'mode' => true,
+                'jsx' => true
+            ],
+            'render_template' => 'parts/winners.php',
+        ));
+
+        acf_register_block_type(array(
+            'name' => 'Finalists',
+            'title' => __('Finalist Block'),
+            'description' => __('Finalist section.'),
+            'category' => 'star-filled',
+            'icon' => 'welcome-widgets-menus',
+            'keywords' => ['cards', 'content', 'repeating', 'awards', 'finalists'],
+            'supports' => [
+                'align' => true,
+                'mode' => true,
+                'jsx' => true
+            ],
+            'render_template' => 'parts/finalists.php',
+        ));
+
+        acf_register_block_type(array(
+            'name' => 'Sponsor Cards',
+            'title' => __('Sponsors Block'),
+            'description' => __('Sponsors section.'),
+            'category' => 'star-filled',
+            'icon' => 'welcome-widgets-menus',
+            'keywords' => ['WooCommersc', 'posts', 'products'],
+            'supports' => [
+                'align' => true,
+                'mode' => true,
+                'jsx' => true
+            ],
+            'render_template' => 'parts/sponsor_cards.php',
+        ));
+
+        acf_register_block_type(array(
+            'name' => 'Sponsor Info',
+            'title' => __('Sponsor Info Block'),
+            'description' => __('Sponsors Info section.'),
+            'category' => 'star-filled',
+            'icon' => 'welcome-widgets-menus',
+            'keywords' => ['WooCommerce', 'posts', 'products'. 'table'],
+            'supports' => [
+                'align' => true,
+                'mode' => true,
+                'jsx' => true
+            ],
+            'render_template' => 'parts/sponsor_info.php',
         ));
 
     }

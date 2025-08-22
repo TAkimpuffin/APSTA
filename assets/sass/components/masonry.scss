@@ -26,6 +26,9 @@
         font-weight: 900;
         font-size: 1.25rem;
         transition: .25s ease-in-out;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: center !important;
         img {
             width: 180px;
             height: 180px;
@@ -61,7 +64,6 @@
                 height: 570px;
             }
 
-
             &--medium {
                 width: 570px;
                 height: 280px;
@@ -80,6 +82,5 @@
                 }
             }
         }
-
     }
 }

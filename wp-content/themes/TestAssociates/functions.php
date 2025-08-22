@@ -9,7 +9,6 @@ ini_set('mysql.trace_mode', 0);
 
 
 // register menus
-
 add_theme_support('menus');
 register_nav_menus(array(
     'primary' => 'Display this menu in header',
@@ -18,7 +17,6 @@ register_nav_menus(array(
 ));
 
 // necessary to use acf block editor stuff
-
 require_once(get_theme_file_path() . '/parts/parts.php');
 
 function block_editor_assets_enqueue()
@@ -34,7 +32,6 @@ add_action('enqueue_block_editor_assets', 'block_editor_assets_enqueue');
 
 
 // quality of life style change for guttenburg backend 
-
 add_action('admin_head', 'admin_styles');
 function admin_styles()
 {
@@ -48,7 +45,6 @@ function admin_styles()
 
 
 // redirect for countried that can't use paypal
-
 add_action('template_redirect', 'redirect_indian_visitors_to_invoice');
 
 function redirect_indian_visitors_to_invoice()
@@ -108,7 +104,6 @@ function redirect_indian_visitors_to_cat_invoice()
     }
 }
 
-
 // Date formatter function for hero
 
 function formatDateWithSuffix($dateString)
@@ -131,29 +126,49 @@ function formatDateWithSuffix($dateString)
     return $day . $suffix . ' ' . $date->format('F Y');
 }
 
+// adding variable product cart button for woocom, why is this not already a feature? hateful plugin.
 
-// WooCom custom template stuff
+function custom_variation_dropdown_add_to_cart($product) {
+    if (!$product || !$product->is_type('variable')) {
+        return;
+    }
 
+    $available_variations = $product->get_available_variations();
 
+    if (empty($available_variations)) {
+        echo '<p>This product has no available variations.</p>';
+        return;
+    }
 
-// function custom_product_title_message() {
+    ?>
 
-// echo '<p>Custom message after the product title!</p>';
+    <form class="custom-variation-form" method="post" action="<?php echo esc_url(wc_get_cart_url()); ?>">
+        <select class="spon__variable" name="variation_id" required>
+            <option value="">Choose a category</option>
+            <?php foreach ($available_variations as $variation) :
+                $variation_obj = wc_get_product($variation['variation_id']);
+                if (!$variation_obj->is_purchasable() || !$variation_obj->is_in_stock()) continue;
 
-// }
+                $variation_name = implode(' / ', array_map('ucwords', $variation['attributes']));
+                ?>
+                <option value="<?php echo esc_attr($variation['variation_id']); ?>">
+                    <?php echo esc_html($variation_name); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
 
-// add_action('woocommerce_single_product_summary', 'custom_product_title_message', 20);
+        <input type="hidden" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" />
+        <button type="submit" class="spon__cartbutton button alt">Add to cart</button>
+    </form>
 
-// //Add filters to modify content before display. For instance, to change product prices, use a filter like this:
+    <style>
+        .custom-variation-form {
+            margin-top: 10px;
+        }
+        .custom-variation-form select {
+            width: 100%;
+            padding: 8px;
+        }
+    </style>
 
-// function custom_price_format($price, $product) {
-
-// return 'Special Price: ' . $price;
-
-// }
-
-// add_filter('woocommerce_get_price_html', 'custom_price_format', 10, 2);
-
-
-
-?>
+<?php } ?>
